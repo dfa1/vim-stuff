@@ -1,9 +1,17 @@
+set nocp
+set noeb
+set vb
+set sc
+
 syntax on
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
+
 set paste
 set number
+set ruler
+
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
