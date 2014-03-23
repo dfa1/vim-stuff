@@ -1,10 +1,20 @@
+set nocp
+set noeb
+set vb
+set sc
+
 syntax on
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
+
 set paste
 set number
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+set ruler
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
