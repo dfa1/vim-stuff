@@ -14,6 +14,11 @@ set paste
 set number
 set ruler
 
+set encoding=utf-8
+set fileencoding=utf-8
+
+colorscheme slate
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
