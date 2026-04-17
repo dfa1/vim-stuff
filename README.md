@@ -4,6 +4,8 @@ Welcome to my Vim setup! This `vimrc` file contains my personal configurations, 
 
 ## Installation
 
-1. `git clone https://github.com/dfa1/vim-stuff`
+1. `git clone https://github.com/dfa1/vim-stuff vim-stuff`
 
-2. `ln -s ~/vim-stuff/vimrc ~/.vimrc`
+2. `cd vim-stuff`
+
+3. `ln -s "$(pwd)/vimrc" ~/.vimrc`
