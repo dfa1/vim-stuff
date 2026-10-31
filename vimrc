@@ -18,6 +18,10 @@ set fileencoding=utf-8
 
 colorscheme slate
 
+" group all autocmds so re-sourcing this file doesn't duplicate them
+augroup vimrc
+autocmd!
+
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
@@ -50,3 +54,5 @@ let g:netrw_winsize = 25
 
 " enables autowrap at column 80
 autocmd FileType markdown setlocal textwidth=80 formatoptions+=t
+
+augroup END
