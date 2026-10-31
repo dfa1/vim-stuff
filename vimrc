@@ -14,7 +14,7 @@ set number
 set ruler
 
 set encoding=utf-8
-set fileencoding=utf-8
+setglobal fileencoding=utf-8
 
 colorscheme slate
 
