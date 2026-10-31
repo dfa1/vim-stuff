@@ -28,7 +28,17 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre * :%s/\s\+$//e
+" strip trailing whitespace on save, keeping cursor and search history;
+" skip filetypes where trailing whitespace is meaningful
+function! s:StripTrailingWhitespace()
+  if &filetype =~# '^\(markdown\|diff\)$'
+    return
+  endif
+  let l:view = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:view)
+endfunction
+autocmd BufWritePre * call s:StripTrailingWhitespace()
 
 au BufRead,BufNewFile *.pp              set filetype=puppet
 
