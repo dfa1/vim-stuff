@@ -1,4 +1,3 @@
-set nocp
 set noeb
 set vb
 set sc
