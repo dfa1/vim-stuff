@@ -10,7 +10,6 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 
-set paste
 set number
 set ruler
 
